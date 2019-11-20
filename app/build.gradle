@@ -1,17 +1,99 @@
+description = "Face Verification Sample"
 apply plugin: 'com.android.application'
-//apply plugin: 'kotlin-android-extensions'
-//apply plugin: 'kotlin-android'
+
+def productRootDir = "../../../.."
+def productBinDir = new File(productRootDir, "Bin")
+def productBinAndroidDir = new File(productBinDir, "Android")
+def productLibAndroidDir = new File(productRootDir, "Lib/Android")
+def archUsed = "arm64-v8a,armeabi-v7a,x86"
+
+def usedNdfList = ["FaceVerification.ndf",
+                   "FaceVerificationIcao.ndf"]
+
+def nativeLibsUsed = ["libjnidispatch.so",
+                      "libNFaceVerificationClient.so",
+                      "libopenblas.so"]
+
+
+buildscript {
+    System.properties['com.android.build.gradle.overrideVersionCheck'] = 'true'
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+gradle.projectsEvaluated {
+    tasks.withType(JavaCompile) {
+        options.compilerArgs << "-Xlint:deprecation"
+    }
+}
+
+task deleteTemporaryFiles(type: Delete) {
+    for (String file : usedNdfList) {
+        delete "${android.sourceSets.main.assets.srcDirs[0]}/data/${file}.jet"
+    }
+    delete "${android.sourceSets.main.jniLibs.srcDirs[0]}"
+}
+
+clean {
+    logger.info(productBinAndroidDir.toString())
+    delete fileTree(dir: productBinAndroidDir , include: "${":app"}*.*")
+}
+
+task prepareNdfFiles(type: Copy) {
+    from "${productBinDir}/Data"
+    includes = usedNdfList
+    rename { String fileName ->
+        fileName.replace('.ndf', '.ndf.jet')
+    }
+    into "${android.sourceSets.main.assets.srcDirs[0]}/data"
+}
+
+int counter = 1
+archUsed.split(',').each {
+    String srcDir = "${productLibAndroidDir}/${it}"
+    String dstDir = "${android.sourceSets.main.jniLibs.srcDirs[0]}/${it}"
+    task "prepareNativeLibs$counter"(type: Copy) {
+        from srcDir
+        for (String lib : nativeLibsUsed) {
+            include lib
+        }
+        into dstDir
+        dependsOn(prepareNdfFiles)
+    }
+    tasks.preBuild.dependsOn("prepareNativeLibs$counter")
+    counter++
+}
+
+task publishApk(type: Copy) {
+    from "${project.buildDir}/outputs/apk/debug"
+    include "${project.archivesBaseName}-*-debug.apk"
+    rename "${project.archivesBaseName}-universal-debug.apk", "${project.archivesBaseName}.apk"
+    into productBinAndroidDir
+}
+
+clean.dependsOn(deleteTemporaryFiles)
+prepareNdfFiles.dependsOn(clean)
+build.finalizedBy(publishApk)
+
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 27
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
 
     defaultConfig {
-        applicationId "com.imperialsoupgmail.tesseractexample"
-        minSdkVersion 18
+        applicationId "com.istl.samples.faceverification"
+        minSdkVersion 19
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//        ndk {
+//            abiFilters 'x86', 'armeabi-v7a', 'arm64-v8a'
+//        }
     }
     buildTypes {
         release {
@@ -27,12 +109,32 @@ android {
             universalApk false
         }
     }
+    packagingOptions {
+        exclude "META-INF/LE-832C0.RSA"
+        exclude "com/sun/jna/**/libjnidispatch.*"
+        exclude "com/sun/jna/**/jnidispatch.*"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+    lintOptions {
+        abortOnError false
+    }
 }
 
+
+
+
 dependencies {
+
+//    implementation ":neurotec-face-verification-client-android"
+//    implementation ":jna"
+//    implementation ":face-verification-rest-client"
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     testImplementation 'junit:junit:4.12'
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.rmtheis:tess-two:5.4.1'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
@@ -41,6 +143,10 @@ dependencies {
     implementation 'com.theartofdev.edmodo:android-image-cropper:2.6.+'
     implementation 'com.github.WindSekirun:MediaResizer:1.1.0'
     implementation 'org.opencv:OpenCV-Android:3.1.0'
+
+    api 'com.squareup.retrofit2:retrofit:2.0.1'
+    api 'com.squareup.retrofit2:converter-gson:2.5.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'
 }
 
 configurations.all {

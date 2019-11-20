@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "779124284956",
+    "firebase_url": "https://facecapturesdk.firebaseio.com",
+    "project_id": "facecapturesdk",
+    "storage_bucket": "facecapturesdk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:779124284956:android:2dc6776f9c60faa7",
+        "android_client_info": {
+          "package_name": "com.istl.samples.faceverification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "779124284956-i5jk7505bcbrrmq91mdet3h7igurbsuv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAj1jhzbcAIVVhLbgfFKudbDUPKxnt-stI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "779124284956-i5jk7505bcbrrmq91mdet3h7igurbsuv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

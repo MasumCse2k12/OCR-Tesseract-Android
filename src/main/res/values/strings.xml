@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="app_name">IFaceVerification</string>
+	<string name="action_clear_db">Clear DB</string>
+	<string name="action_settings">Settings</string>
+	<string name="action_activation">Activation</string>
+
+	<string name="msg_enroll">Enroll</string>
+	<string name="msg_verify">Verify</string>
+	<string name="msg_cancel">Cancel</string>
+	<string name="msg_force">Force</string>
+	<string name="msg_check_liveness">Check liveness</string>
+	<string name="msg_initialising">Initialising SDK</string>
+	<string name="msg_obtaining">Obtaining licenses</string>
+	<string name="msg_ok">OK</string>
+	<string name="msg_enter_user_id">Please enter user ID</string>
+	<string name="msg_no_users">There are no users</string>
+	<string name="msg_database">Database</string>
+	<string name="msg_operation_status">Operation status: %s</string>
+	<string name="msg_liveness_mode">Liveness mode</string>
+	<string name="msg_check_icao_compliance">Check ICAO compliance</string>
+	<string name="msg_manual_capturing">Manual capturing</string>
+	<string name="msg_cancelling">Cancelling</string>
+	<string name="msg_liveness_th">Liveness threshold</string>
+	<string name="msg_matching_th">Matching threshold</string>
+	<string name="msg_quality_th">Quality threshold</string>
+
+	<string name="msg_enrollment_to_db_succeeded">enrollment to database succeeded</string>
+	<string name="msg_enrollment_to_db_failed">enrollment to database failed</string>
+	<string name="msg_verification_succeeded">verification succeeded</string>
+	<string name="msg_verification_failed">verification failed: </string>
+
+	<string name="msg_saturation_th">Saturation threshold</string>
+	<string name="msg_sharpness_th">Sharpness threshold</string>
+	<string name="msg_background_uniformity_th">Background uniformity threshold</string>
+	<string name="msg_grayscale_density_th">Grayscale density threshold</string>
+	<string name="msg_looking_away_th">Looking away threshold</string>
+	<string name="msg_red_eye_th">Red eye threshold</string>
+	<string name="msg_face_darkness_th">Face darkness threshold</string>
+	<string name="msg_unnatural_skin_tone_th">Unnatural skin tone threshold</string>
+	<string name="msg_washed_out_th">Washed out threshold</string>
+	<string name="msg_pixelation_th">Pixelation threshold</string>
+	<string name="msg_skin_reflection_th">Skin reflection threshold</string>
+	<string name="msg_glasses_reflection_th">Glasses reflection threshold</string>
+	<string name="msg_expression_th">Expression threshold</string>
+	<string name="msg_dark_glasses_th">Dark glasses threshold</string>
+	<string name="msg_blink_th">Blink threshold</string>
+	<string name="msg_mouth_open_th">Mouth open threshold</string>
+
+	<string name="msg_buffer_is_null">Template is null</string>
+	<string name="msg_key_registered">Key registered</string>
+	<string name="pref_matching">Verification settings</string>
+	<string name="pref_extraction">Extraction settings</string>
+	<string name="pref_liveness">Liveness settings</string>
+	<string name="pref_capturing">Capturing settings</string>
+	<string name="pref_icao">ICAO settings</string>
+
+	<string name="pref_authentication_category">Authentication</string>
+	<string name="pref_authentication_ip">IP address</string>
+	<string name="pref_authentication_key">Authentication key</string>
+
+	<string name="msg_no_records_in_database">No records in database</string>
+	<string name="msg_enrollment_enter_id">Enter Information for enrollment</string>
+	<string name="nid_enrollment_enter_id">Enter NID for enrollment</string>
+
+	<string name="msg_select_camera">Camera</string>
+	<string name="msg_select_video_format">Video format</string>
+
+	<string-array name="arr_liveness_modes">
+		<item>NONE</item>
+		<item>PASSIVE</item>
+		<item>ACTIVE</item>
+		<item>PASSIVE_AND_ACTIVE</item>
+		<item>SIMPLE</item>
+		<item>CUSTOM</item>
+	</string-array>
+
+</resources>
