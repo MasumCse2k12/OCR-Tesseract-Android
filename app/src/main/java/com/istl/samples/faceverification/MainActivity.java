@@ -1,6 +1,6 @@
 package com.istl.samples.faceverification;
 
-import android.app.ProgressDialog;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.AssetManager;

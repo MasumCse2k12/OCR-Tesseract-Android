@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <EditText
+        android:id="@+id/voterNid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:hint="Enter NID" />
+    <EditText
+        android:id="@+id/dateOfBirth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="50dp"
+        android:layout_below="@+id/voterNid"
+        android:ems="10"
+        android:hint="Enter Date of Birth(dd/mm/yy)" />
+    <Button
+        android:id="@+id/pickDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_below="@+id/dateOfBirth"
+        android:layout_centerVertical="true"
+        android:text="Submit" />
+<!--    <TextView-->
+<!--        android:id="@+id/dateView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/pickDate"-->
+<!--        android:layout_marginLeft="50dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textSize="18dp"/>-->
+    <ImageView
+        android:id="@+id/faceView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        app:srcCompat="@drawable/face"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/pickDate"/>
+</RelativeLayout>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+	<PreferenceCategory
+		android:title="@string/pref_authentication_category"
+		android:key="pref_key_authentication_category">
+
+		<EditTextPreference
+			android:key="key_pref_authentication_ip"
+			android:title="@string/pref_authentication_ip"
+			android:defaultValue="https://faceverification.neurotechnology.com/rs/"
+			android:text="https://faceverification.neurotechnology.com/rs/"/>
+		<EditTextPreference
+			android:key="key_pref_authentication_key"
+			android:title="@string/pref_authentication_key"
+			android:defaultValue="9tlitadjedrg1emf9e27d0dlkt"
+			android:text="9tlitadjedrg1emf9e27d0dlkt"/>
+	</PreferenceCategory>
+	<PreferenceCategory
+		android:title="@string/pref_matching"
+		android:key="pref_key_matching">
+
+		<com.istl.samples.faceverification.gui.NumberPickerPreference
+			android:key="key_pref_matching_th"
+			android:title="@string/msg_matching_th"
+			android:defaultValue="48"
+			app:maxValue="72" />
+	</PreferenceCategory>
+
+	<PreferenceCategory
+		android:title="@string/pref_extraction"
+		android:key="pref_key_extraction">
+
+		<com.istl.samples.faceverification.gui.NumberPickerPreference
+			android:key="key_pref_quality_th"
+			android:title="@string/msg_quality_th"
+			android:defaultValue="50" />
+
+	</PreferenceCategory>
+
+	<PreferenceCategory
+		android:title="@string/pref_liveness"
+		android:key="pref_key_liveness">
+
+		<com.istl.samples.faceverification.gui.NumberPickerPreference
+			android:key="key_pref_liveness_th"
+			android:title="@string/msg_liveness_th"
+			android:defaultValue="50" />
+
+		<ListPreference
+			android:key="key_pref_liveness_mode"
+			android:title="@string/msg_liveness_mode"
+			android:defaultValue="NONE"
+			android:entries="@array/arr_liveness_modes"
+			android:entryValues="@array/arr_liveness_modes"
+			/>
+
+		<PreferenceScreen
+			android:title="@string/msg_liveness_custom_actions"
+			android:key="key_pref_custom_actions"
+			android:defaultValue=" ">
+			<intent android:action="com.neurotec.samples.faceverification.gui.CustomPreferenceActivity"/>
+		</PreferenceScreen>
+
+		<com.istl.samples.faceverification.gui.NumberPickerPreference
+			android:key="key_pref_liveness_blink_timeout"
+			android:title="@string/msg_liveness_blink_timeout"
+			android:defaultValue="2"
+			app:maxValue="30" />
+
+		<CheckBoxPreference
+			android:key="key_pref_liveness_use_separate_blink"
+			android:title="@string/msg_liveness_use_separate_blink"
+			android:defaultValue="false"
+			/>
+
+		<com.istl.samples.faceverification.gui.NumberPickerPreference
+			android:key="key_pref_liveness_separate_blink_threshold"
+			android:title="@string/msg_liveness_separate_blink_threshold"
+			android:defaultValue="50" />
+
+		<com.istl.samples.faceverification.gui.NumberPickerPreference
+			android:key="key_pref_liveness_separate_blink_hysteresis"
+			android:title="@string/msg_liveness_separate_blink_hysteresis"
+			android:defaultValue="1" />
+	 </PreferenceCategory>
+
+	<PreferenceCategory
+		android:title="@string/pref_capturing"
+		android:key="pref_key_capturing">
+
+		<CheckBoxPreference
+			android:key="key_pref_check_icao"
+			android:title="@string/msg_check_icao_compliance"
+			android:defaultValue="false"
+			/>
+		<CheckBoxPreference
+			android:key="key_pref_manual_capturing"
+			android:title="@string/msg_manual_capturing"
+			android:defaultValue="false"
+			/>
+		<ListPreference
+			android:key="key_pref_camera"
+			android:title="@string/msg_select_camera"
+			/>
+		<ListPreference
+			android:key="key_pref_video_format_1"
+			android:title="@string/msg_select_video_format"
+			/>
+	</PreferenceCategory>
+
+	<PreferenceCategory
+		android:title="@string/pref_icao"
+		android:key="pref_key_icao">
+
+		<com.istl.samples.faceverification.gui.NumberPickerPreference
+			android:key="key_pref_saturation_th"
+			android:title="@string/msg_saturation_th"
+			android:defaultValue="50" />
+		<com.istl.samples.faceverification.gui.NumberPickerPreference
+			android:key="key_pref_sharpness_th"
+			android:title="@string/msg_sharpness_th"
+			android:defaultValue="50" />
+		<com.istl.samples.faceverification.gui.NumberPickerPreference
+			android:key="key_pref_background_uniformity_th"
+			android:title="@string/msg_background_uniformity_th"
+			android:defaultValue="0" />
+		<com.istl.samples.faceverification.gui.NumberPickerPreference
+			android:key="key_pref_grayscale_density_th"
+			android:title="@string/msg_grayscale_density_th"
+			android:defaultValue="50" />
+		<com.istl.samples.faceverification.gui.NumberPickerPreference
+			android:key="key_pref_looking_away_th"
+			android:title="@string/msg_looking_away_th"
+			android:defaultValue="50" />
+		<com.istl.samples.faceverification.gui.NumberPickerPreference
+			android:key="key_pref_red_eye_th"
+			android:title="@string/msg_red_eye_th"
+			android:defaultValue="50" />
+		<com.istl.samples.faceverification.gui.NumberPickerPreference
+			android:key="key_pref_face_darkness_th"
+			android:title="@string/msg_face_darkness_th"
+			android:defaultValue="50" />
+		<com.istl.samples.faceverification.gui.NumberPickerPreference
+			android:key="key_pref_unnatural_skin_tone_th"
+			android:title="@string/msg_unnatural_skin_tone_th"
+			android:defaultValue="30" />
+		<com.istl.samples.faceverification.gui.NumberPickerPreference
+			android:key="key_pref_washed_out_th"
+			android:title="@string/msg_washed_out_th"
+			android:defaultValue="50" />
+		<com.istl.samples.faceverification.gui.NumberPickerPreference
+			android:key="key_pref_pixelation_th"
+			android:title="@string/msg_pixelation_th"
+			android:defaultValue="50" />
+		<com.istl.samples.faceverification.gui.NumberPickerPreference
+			android:key="key_pref_skin_reflection_th"
+			android:title="@string/msg_skin_reflection_th"
+			android:defaultValue="30" />
+		<com.istl.samples.faceverification.gui.NumberPickerPreference
+			android:key="key_pref_glasses_reflection_th"
+			android:title="@string/msg_glasses_reflection_th"
+			android:defaultValue="50" />
+		<com.istl.samples.faceverification.gui.NumberPickerPreference
+			android:key="key_pref_expression_th"
+			android:title="@string/msg_expression_th"
+			android:defaultValue="5" />
+		<com.istl.samples.faceverification.gui.NumberPickerPreference
+			android:key="key_pref_dark_glasses_th"
+			android:title="@string/msg_dark_glasses_th"
+			android:defaultValue="5" />
+		<com.istl.samples.faceverification.gui.NumberPickerPreference
+			android:key="key_pref_blink_th"
+			android:title="@string/msg_blink_th"
+			android:defaultValue="5" />
+		<com.istl.samples.faceverification.gui.NumberPickerPreference
+			android:key="key_pref_mouth_open_th"
+			android:title="@string/msg_mouth_open_th"
+			android:defaultValue="5" />
+
+	</PreferenceCategory>
+
+</PreferenceScreen>

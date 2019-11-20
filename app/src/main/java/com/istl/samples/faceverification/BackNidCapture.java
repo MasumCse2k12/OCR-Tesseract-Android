@@ -1,6 +1,6 @@
 package com.istl.samples.faceverification;
 
-import android.app.ProgressDialog;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.AssetManager;
@@ -61,14 +61,16 @@ public class BackNidCapture extends AppCompatActivity {
 
 
     public void submitBackImage(View view){
-        Handler handler = new Handler(Looper.getMainLooper());
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
+        Intent intent = new Intent (BackNidCapture.this,FaceVerificationApplication.class);
+                startActivity(intent);
+//        Handler handler = new Handler(Looper.getMainLooper());
+//        handler.post(new Runnable() {
+//            @Override
+//            public void run() {
 //                Intent intent = new Intent (MainActivity.this, BackNidCapture.class);
 //                startActivity(intent);
-            }
-        });
+//            }
+//        });
     }
 
 

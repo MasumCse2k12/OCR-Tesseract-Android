@@ -1,13 +1,15 @@
 package com.istl.samples.faceverification.utils;
 
-import com.neurotec.face.verification.server.rest.ApiException;
-import com.istl.samples.faceverification.gui.ErrorDialogFragment;
-import com.istl.samples.faceverification.gui.InfoDialogFragment;
 
-import android.app.Activity;
+import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-public abstract class BaseActivity extends Activity {
+import com.istl.samples.faceverification.gui.ErrorDialogFragment;
+import com.istl.samples.faceverification.gui.InfoDialogFragment;
+import com.neurotec.face.verification.server.rest.ApiException;
+
+public abstract class BaseActivity extends AppCompatActivity {
 
 	private static final String TITLE_START = "<title>";
 	private static final String TITLE_END = "</title>";
@@ -16,7 +18,7 @@ public abstract class BaseActivity extends Activity {
 	// Private fields
 	// ===========================================================
 
-
+//	private ProgressDialog mProgressDialog;
 
 	// ===========================================================
 	// Private methods

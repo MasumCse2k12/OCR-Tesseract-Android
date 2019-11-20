@@ -20,6 +20,16 @@
         <activity android:name="com.istl.samples.faceverification.BackNidCapture" />
         <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat"/>
+
+        <activity android:name="com.istl.samples.faceverification.gui.SettingsActivity"></activity>
+        <activity android:name="com.istl.samples.faceverification.gui.CustomPreferenceActivity">
+            <intent-filter>
+                <action android:name="com.neurotec.samples.faceverification.gui.CustomPreferenceActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.istl.samples.faceverification.FaceVerificationApplication"></activity>
 </application>
 
 </manifest>
