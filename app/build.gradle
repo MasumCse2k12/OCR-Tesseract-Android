@@ -1,7 +1,7 @@
 description = "Face Verification Sample"
 apply plugin: 'com.android.application'
 
-def productRootDir = "../../../.."
+def productRootDir = "../../../../.."
 def productBinDir = new File(productRootDir, "Bin")
 def productBinAndroidDir = new File(productBinDir, "Android")
 def productLibAndroidDir = new File(productRootDir, "Lib/Android")
@@ -38,7 +38,7 @@ task deleteTemporaryFiles(type: Delete) {
 
 clean {
     logger.info(productBinAndroidDir.toString())
-    delete fileTree(dir: productBinAndroidDir , include: "${":app"}*.*")
+    delete fileTree(dir: productBinAndroidDir , include: "${":OCR-Tesseract-Android"}*.*")
 }
 
 task prepareNdfFiles(type: Copy) {

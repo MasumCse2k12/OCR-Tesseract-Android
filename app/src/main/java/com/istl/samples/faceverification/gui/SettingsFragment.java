@@ -1,6 +1,6 @@
 package com.istl.samples.faceverification.gui;
 
-import com.imperialsoupgmail.faceverification.R;
+import com.istl.samples.faceverification.R;
 import com.istl.samples.faceverification.NFV;
 import com.neurotec.face.verification.client.NFaceVerificationClient;
 import com.neurotec.face.verification.client.NIcaoWarnings;

@@ -16,7 +16,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.imperialsoupgmail.faceverification.R;
+import com.istl.samples.faceverification.R;
 import com.istl.samples.faceverification.gui.NFaceVerificationClientView;
 import com.istl.samples.faceverification.gui.SettingsActivity;
 import com.istl.samples.faceverification.gui.SettingsFragment;

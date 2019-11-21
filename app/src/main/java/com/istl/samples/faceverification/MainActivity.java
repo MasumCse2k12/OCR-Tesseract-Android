@@ -1,7 +1,6 @@
 package com.istl.samples.faceverification;
 
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
@@ -9,8 +8,6 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -19,7 +16,7 @@ import android.widget.TextView;
 
 
 import com.googlecode.tesseract.android.TessBaseAPI;
-import com.imperialsoupgmail.faceverification.R;
+import com.istl.samples.faceverification.R;
 import com.nguyenhoanglam.imagepicker.model.Config;
 import com.nguyenhoanglam.imagepicker.model.Image;
 import com.theartofdev.edmodo.cropper.CropImage;

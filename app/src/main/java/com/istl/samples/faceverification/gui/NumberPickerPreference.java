@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.NumberPicker;
 
-import com.imperialsoupgmail.faceverification.R;
+import com.istl.samples.faceverification.R;
 
 
 public class NumberPickerPreference extends DialogPreference {

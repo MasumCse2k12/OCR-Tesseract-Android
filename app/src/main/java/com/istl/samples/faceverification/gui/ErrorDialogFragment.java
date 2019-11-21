@@ -6,7 +6,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 
-import com.imperialsoupgmail.faceverification.R;
+import com.istl.samples.faceverification.R;
 
 
 public class ErrorDialogFragment extends DialogFragment {

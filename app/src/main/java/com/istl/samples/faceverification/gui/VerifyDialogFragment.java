@@ -8,8 +8,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.util.Base64;
 import android.view.LayoutInflater;
@@ -18,7 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import com.imperialsoupgmail.faceverification.R;
+import com.istl.samples.faceverification.R;
 import com.istl.samples.faceverification.services.NidService;
 import com.istl.samples.faceverification.services.RetrofitSingleton;
 import com.istl.samples.faceverification.utils.NidRequest;
